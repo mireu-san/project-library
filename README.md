@@ -121,3 +121,14 @@ https://recoiljs.org/docs/introduction/installation/
 https://javascript.plainenglish.io/set-up-eslint-and-prettier-in-a-react-typescript-app-2022-7d9a5f40b634
 
 https://velog.io/@juno7803/Recoil-Recoil-200-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0
+
+- Auth? - use firebase to let it work.
+  https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
+  https://www.freecodecamp.org/news/use-firebase-authentication-in-a-react-app/
+
+https://www.freecodecamp.org/news/how-to-use-recoil-for-state-management-in-your-react-projects/
+
+filter:
+https://recoiljs.org/docs/basic-tutorial/selectors/
+
+https://blog.logrocket.com/simple-state-management-react-recoil/
