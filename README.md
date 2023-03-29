@@ -104,3 +104,6 @@ search result page: 1. result table, 2. filter
 https://www.freecodecamp.org/news/typescript-for-react-developers/
 https://github.com/dastasoft/react-boilerplate/tree/cra-typescript
 https://recoiljs.org/docs/introduction/installation/
+
+
+https://javascript.plainenglish.io/set-up-eslint-and-prettier-in-a-react-typescript-app-2022-7d9a5f40b634
