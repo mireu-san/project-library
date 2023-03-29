@@ -1,11 +1,16 @@
 import React from 'react';
+import Home from './pages/Home/Home';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const App = () => {
 	return (
 		<div className="App">
-			<header className="App-header">test</header>
+			<header className="App-header">
+				<Home />
+			</header>
 		</div>
 	);
-}
+};
 
 export default App;
