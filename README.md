@@ -216,4 +216,4 @@ May insert animation for the Home title only.
 Recoil - async data queries, add to an array instead of overwriting
 https://github.com/facebookexperimental/Recoil/discussions/2136?sort=top
 
-https://usage.tistory.com/155
+https://usage.tistory.com/155 - do not fuse recoil and react-query. Both need to be independent.
