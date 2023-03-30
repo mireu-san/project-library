@@ -149,6 +149,37 @@ https://developers.naver.com/docs/common/openapiguide/apilist.md#%EB%B9%84%EB%A1
 https://velog.io/@dev-sjko/react-node-js-naver-book-search-api
 https://msyu1207.tistory.com/entry/React%EB%A1%9C-%EC%98%81%ED%99%94-%EC%A0%95%EB%B3%B4%EB%A5%BC-%EA%B2%80%EC%83%89%ED%95%B4%EB%B3%B4%EC%9E%90-%EB%91%90%EB%B2%88%EC%A7%B8-%EB%84%A4%EC%9D%B4%EB%B2%84-API-%EC%82%AC%EC%9A%A9-CORS-%EC%84%A4%EC%A0%95-%ED%95%98%EA%B8%B0
 
+skeleton
+https://www.youtube.com/watch?v=ZVug65gW-fc&ab_channel=WebDevSimplified
+
+pagination
+https://nordicapis.com/everything-you-need-to-know-about-api-pagination/
+https://blog.naver.com/PostView.naver?blogId=kimhecan&logNo=222451504235
+
+react hook form - react hook form checkbox track
+checkbox : https://velog.io/@jmcode/react-hook-form%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9Ccheckbox-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0
+https://stackoverflow.com/questions/71793608/react-hook-form-set-checkbox-to-checked-state
+https://tech.osci.kr/2023/01/02/introduce-react-hook-form/
+
+react hook form and recoil
+
+- https://tech.inflab.com/202207-rallit-form-refactoring/react-hook-form/
+
+sign in , signup page? (might can achieve with recoil, with no firebase)
+
+- https://velog.io/@hyo123/react-hook-form-%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C
+- https://codesandbox.io/s/recoil-react-hook-form-rmhoy4?file=/pages/confirm.tsx (structure)
+
+Q. With recoil, store loaded data from api and apply filter feature to it and store its result? (ask later)
+
+- https://recoiljs.org/docs/guides/asynchronous-data-queries/
+
+https://blog.logrocket.com/crud-with-facebook-recoil/
+https://github.com/diogosouza/react-recoil-crud
+
+core: recoil and api call (might use recoil only rather than react-query)
+https://javascript.plainenglish.io/getting-to-know-recoil-initializing-and-maintaining-react-application-state-with-asynchronous-c5c3eb114c39
+
 # final summary for Friday: Project library
 
 - load data from naver api - book first. Use axios. (Do not use react-query at this point).
