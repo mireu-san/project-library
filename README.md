@@ -200,7 +200,8 @@ So far, (1) api data (2) search bar UI (3) search bar can load and print the loa
 - user should tick favourite book, and mark it with tickbox. Once it is done, should be stored in localStorage or state.
 - (by using stored information, that ticked book by user), this can be opened and checked from 'Bookmark' or 'Home(at bottom)' page.
 
-So far, (1) checkbox reflection with react-hook-form (2) use recoil to reflect the changes of checkbox on searchResult to Bookmark or Home page.
+So far, (1) checkbox reflection with react-hook-form (2) use recoil to reflect the changes of checkbox on searchResult to Bookmark or Home page. (OK)
+<<USING RECOIL TO HANDLE ASYNC IS OK!>>
 
 - finally, add account login page. This can be turned on once page is loaded at the beginning (may use firebase to achieve this goal).
 
@@ -209,3 +210,8 @@ Then double check the library page I benchmark, and see how to solve the CSS.
 - For CSS, do not use dropdown menu since this time, the page will not have that many pages. Or, place only one drop down menu.
 - Insert skeleton transition effect. (start from loading(waiting) for searchResult, then once it is over, then try showing the finished effect of its transition like the library page).
 - Other than that, follow the main structure of the page I benchmark.
+
+May insert animation for the Home title only.
+
+Recoil - async data queries, add to an array instead of overwriting
+https://github.com/facebookexperimental/Recoil/discussions/2136?sort=top
