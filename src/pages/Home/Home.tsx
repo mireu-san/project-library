@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import HomeBody from '../../components/HomeBody/HomeBody';
+// import HomeBody from '../../components/HomeBody/HomeBody';
 // yet to insert state.
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
 					<div className="home-navbar">
 						<Header />
 					</div>
-					<div className="home-header">
+					<div className="home-heading-header">
 						{/* <HomeBody /> */}
 						{/* - add banner here. --- beyond this point, use css --- */}
 						<div>banner top</div>
