@@ -218,3 +218,4 @@ https://github.com/facebookexperimental/Recoil/discussions/2136?sort=top
 
 https://usage.tistory.com/155 - do not fuse recoil and react-query. Both need to be independent.
 https://tkdodo.eu/blog/react-query-as-a-state-manager - react-query
+https://stackoverflow.com/questions/66415432/how-do-i-use-usereducer-with-usequery
