@@ -161,7 +161,13 @@ checkbox : https://velog.io/@jmcode/react-hook-form%EC%9D%84-%EC%82%AC%EC%9A%A9%
 https://stackoverflow.com/questions/71793608/react-hook-form-set-checkbox-to-checked-state
 https://tech.osci.kr/2023/01/02/introduce-react-hook-form/
 
-react hook form and recoil
+react recoil async (clean)
+
+- https://songjang.tistory.com/45
+- https://velog.io/@2ast/React-Recoil-selector%EB%A1%9C-%EB%B9%84%EB%8F%99%EA%B8%B0-%EC%9E%91%EC%97%85-%EC%88%98%ED%96%89%ED%95%98%EA%B8%B0
+  https://velog.io/@yiyb0603/Recoil-Selector-useRecoilValueLoadable%EC%9D%84-%ED%99%9C%EC%9A%A9 ! (CUSTOM HOOK REACT SIMPLE VERSION)
+
+  react hook form and recoil
 
 - https://tech.inflab.com/202207-rallit-form-refactoring/react-hook-form/
 
@@ -169,8 +175,9 @@ sign in , signup page? (might can achieve with recoil, with no firebase)
 
 - https://velog.io/@hyo123/react-hook-form-%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C
 - https://codesandbox.io/s/recoil-react-hook-form-rmhoy4?file=/pages/confirm.tsx (structure)
+- https://freestrokes.tistory.com/166 (same as above)
 
-Q. With recoil, store loaded data from api and apply filter feature to it and store its result? (ask later)
+  Q. With recoil, store loaded data from api and apply filter feature to it and store its result? (ask later)
 
 - https://recoiljs.org/docs/guides/asynchronous-data-queries/
 
