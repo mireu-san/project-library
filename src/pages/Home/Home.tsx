@@ -15,15 +15,15 @@ const Home = () => {
 					<div className="home-heading-header">
 						{/* <HomeBody /> */}
 						{/* - add banner here. --- beyond this point, use css --- */}
-						<div>banner top</div>
-						<div>banner picture</div>
-						<div>search bar</div>
+						<span>banner top</span>
+						<span>banner picture</span>
+						<span>search bar</span>
 					</div>
 					<div className="home-body">
-						<div>new Date</div>
-						<div>Using the library</div>
-						<div>subtitle</div>
-						<div>may load the list of book here?</div>
+						<span>new Date</span>
+						<span>Using the library</span>
+						<span>subtitle</span>
+						<span>may load the list of book here?</span>
 					</div>
 					<div className="home-footer">
 						<Footer />
