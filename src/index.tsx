@@ -17,9 +17,9 @@ root.render(
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/" element={<SearchResult />} />
-				<Route path="/" element={<BookList />} />
-				<Route path="/" element={<BookDetail />} />
+				<Route path="searchresult" element={<SearchResult />} />
+				<Route path="list" element={<BookList />} />
+				<Route path="/detail/:id" element={<BookDetail />} />
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>
