@@ -4,16 +4,23 @@ import App from './App';
 // Start Applying RecoilRoot once first draft is complete!
 // import { RecoilRoot } from 'recoil';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import SearchResult from './pages/SearchResult/SearchResult';
+import BookList from './components/BookList/BookList';
+import BookDetail from './components/BookDetail/BookDetail';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
 );
 root.render(
 	<React.StrictMode>
-		{/* <RecoilRoot> */}
-		{/* <Routes> */}
-		<App />
-		{/* </Routes> */}
-		{/* </RecoilRoot> */}
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/" element={<SearchResult />} />
+				<Route path="/" element={<BookList />} />
+				<Route path="/" element={<BookDetail />} />
+			</Routes>
+		</BrowserRouter>
 	</React.StrictMode>
 );
