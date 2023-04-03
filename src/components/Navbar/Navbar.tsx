@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import logoImg from '../../images/logo.png';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 
 const Navbar = () => {
@@ -12,6 +11,11 @@ const Navbar = () => {
 		<nav className="navbar" id="navbar">
 			<div className="container navbar-content flex">
 				<div className="brand-and-toggler flex flex-sb">
+					<Link to="/" className="navbar-brand flex">
+						<span className="text-uppercase fw-7 fs-24 ls-1">
+							Naver DB Book Searcher
+						</span>
+					</Link>
 					<button
 						type="button"
 						className="navbar-toggler-btn"
@@ -24,11 +28,6 @@ const Navbar = () => {
 							}}
 						/>
 					</button>
-					<Link to="/" className="navbar-brand flex">
-						<span className="text-uppercase fw-7 fs-24 ls-1">
-							Naver DB Library
-						</span>
-					</Link>
 				</div>
 
 				<div
@@ -52,7 +51,7 @@ const Navbar = () => {
 								to="about"
 								className="nav-link text-uppercase text-white fs-22 fw-6 ls-1"
 							>
-								About
+								about
 							</Link>
 						</li>
 					</ul>
