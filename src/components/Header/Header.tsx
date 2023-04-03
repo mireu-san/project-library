@@ -5,16 +5,20 @@ import './Header.css';
 
 const Header = () => {
 	return (
-		<div className="header-root">
+		<div className="holder">
 			<header className="header">
 				<Navbar />
 				<div className="header-content flex flex-c text-center text-white">
-					<h2 className="header-title text-capitalize">Welcome to LIBRARY.</h2>
+					<h2 className="header-title text-capitalize">
+						Welcome to LIBRARY.mireu-san
+					</h2>
 					<br />
-					<SearchForm />
-					<p className="header-text fs-18 fw=3">
-						Note: This database search provider is from NHN(Naver).
+					<p className="header-text fs-18 fw-3">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam beatae
+						sapiente quibusdam consequatur perspiciatis facere laboriosam non
+						nesciunt at id repudiandae, modi iste? Eligendi, rerum!
 					</p>
+					<SearchForm />
 				</div>
 			</header>
 		</div>
