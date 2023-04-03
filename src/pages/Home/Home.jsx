@@ -6,10 +6,11 @@ const Home = () => {
 	return (
 		<main>
 			<Header />
-  {/* <Footer /> */}
 			<Outlet />
 		</main>
 	);
 };
 
 export default Home;
+
+{/* <Footer /> */}
