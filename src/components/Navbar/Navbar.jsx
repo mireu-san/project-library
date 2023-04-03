@@ -25,7 +25,6 @@ const Navbar = () => {
 							size={35}
 							style={{
 								color: toggleMenu ? '#fff' : '#010101',
-								// add the following line to set the color to white
 								backgroundColor: toggleMenu ? '#010101' : '#fff',
 								borderRadius: '10px',
 							}}
