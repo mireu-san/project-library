@@ -13,3 +13,7 @@
 	opacity: 0.8;
 	max-width: 770px;
 }
+
+.header-text a {
+	color: white;
+}

@@ -47,7 +47,7 @@
 	color: var(--purple-color);
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 800px) {
 	.navbar-collapse {
 		position: relative;
 		height: auto;
@@ -63,6 +63,18 @@
 	.nav-item {
 		margin-bottom: 0;
 		margin-left: 2.8rem;
+		display: inline-block;
+		position: relative;
+		padding: 0 20px;
+	}
+
+	.nav-item:not(:last-child)::after {
+		content: '|';
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		color: var(--black-color);
 	}
 
 	.nav-link {
@@ -75,8 +87,8 @@
 		display: flex;
 	}
 
-	.navbar-nav .nav-item:first-child .nav-link,
+	/* .navbar-nav .nav-item:first-child .nav-link,
 	.navbar-nav .nav-item:nth-child(2) .nav-link {
 		color: var(--black-color);
-	}
+	} */
 }

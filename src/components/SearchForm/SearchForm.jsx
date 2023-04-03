@@ -15,7 +15,7 @@ const SearchForm = () => {
 		let tempSearchTerm = searchText.current.value.trim();
 		if (tempSearchTerm.replace(/[^\w\s]/gi, '').length === 0) {
 			setSearchTerm('');
-			setResultTitle('Please Enter Something ...');
+			setResultTitle('Please input some keyword first.');
 		} else {
 			setSearchTerm(searchText.current.value);
 		}

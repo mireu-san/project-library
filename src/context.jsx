@@ -2,6 +2,8 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
+// Highly linked to BookList file.
+
 const URL = 'http://openlibrary.org/search.json?title=';
 const AppContext = React.createContext();
 
@@ -17,6 +19,7 @@ const AppProvider = ({ children }) => {
 			const response = await fetch(`${URL}${searchTerm}`);
 			const data = await response.json();
 			const { docs } = data;
+			console.log('Data here!', data.docs);
 
 			if (docs) {
 				const newBooks = docs.slice(0, 20).map((bookSingle) => {
@@ -44,11 +47,15 @@ const AppProvider = ({ children }) => {
 				if (newBooks.length > 1) {
 					setResultTitle('Your Search Result');
 				} else {
-					setResultTitle('No Search Result Found!');
+					setResultTitle(
+						'No search results found. Please try again using a different approach.'
+					);
 				}
 			} else {
 				setBooks([]);
-				setResultTitle('No Search Result Found!');
+				setResultTitle(
+					'No search results found. Please try again using a different approach.'
+				);
 			}
 			setLoading(false);
 		} catch (error) {
