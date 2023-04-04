@@ -3,6 +3,13 @@
 	background: linear-gradient(rgba(141, 39, 174, 0.3), rgba(141, 39, 174, 0.5)),
 		url('../../images/library3.gif') center/cover no-repeat;
 	flex-direction: column;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%; /* set height to 100% */
+	overflow: auto; /* add overflow property */
 }
 .header-title {
 	font-size: 4.2rem;

@@ -9,6 +9,11 @@
 	--transition: all 300ms ease-in-out;
 }
 
+/* may remove if layout is in trouble - added to hide scroll bar */
+html {
+	overflow: auto;
+}
+
 .navbar {
 	background-color: var(--black-color);
 	color: var(--white-color);
