@@ -220,9 +220,10 @@ https://usage.tistory.com/155 - do not fuse recoil and react-query. Both need to
 https://tkdodo.eu/blog/react-query-as-a-state-manager - react-query
 https://stackoverflow.com/questions/66415432/how-do-i-use-usereducer-with-usequery
 
-# device conflict:
+# conflict log:
 
-While composing checkbox and bookmark page:
+While composing checkbox and bookmark page (solved):
 
 - After searching a book, there is 'kaikas' error: this is absolutely not linked to the ongoing project in any manner.
 - Try this again from another device later.
+- (solved) It was just a specific browser's issue. Looks like the browser where installed kaikas causes this problem.
