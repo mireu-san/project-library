@@ -1,5 +1,5 @@
 import React from 'react';
-import LoaderImg from '../../images/loader.svg';
+import LoaderImg from '../../images/loader2.svg';
 import './Loader.css';
 
 const Loader = () => {

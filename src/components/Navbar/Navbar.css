@@ -39,6 +39,10 @@
 .nav-item {
 	margin-bottom: 1.4rem;
 }
+.nav-item .nav-link {
+	color: white;
+}
+
 .nav-link {
 	transition: var(--transition);
 	color: var(--black-color);
