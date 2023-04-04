@@ -219,3 +219,10 @@ https://github.com/facebookexperimental/Recoil/discussions/2136?sort=top
 https://usage.tistory.com/155 - do not fuse recoil and react-query. Both need to be independent.
 https://tkdodo.eu/blog/react-query-as-a-state-manager - react-query
 https://stackoverflow.com/questions/66415432/how-do-i-use-usereducer-with-usequery
+
+# device conflict:
+
+While composing checkbox and bookmark page:
+
+- After searching a book, there is 'kaikas' error: this is absolutely not linked to the ongoing project in any manner.
+- Try this again from another device later.
