@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './BookList.css';
 
 const Book = (book) => {
-	const [isChecked, setIsChecked] = useState(false);
+	const [isChecked, setIsChecked] = useState(() => {
+		const storedValue = localStorage.getItem(book.id);
+		return storedValue !== null ? JSON.parse(storedValue) : false;
+	});
 
-	const handleCheckboxChange = () => {
-		setIsChecked(!isChecked);
-		if (!isChecked) {
+	useEffect(() => {
+		if (isChecked) {
 			localStorage.setItem(book.id, JSON.stringify(book));
 		} else {
 			localStorage.removeItem(book.id);
 		}
+	}, [isChecked, book.id]);
+
+	const handleCheckboxChange = () => {
+		setIsChecked(!isChecked);
 	};
 
 	return (
