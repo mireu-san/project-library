@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import Book from '../BookList/Book';
+import './BookmarkList.css';
 
 const BookmarkList = () => {
 	const [bookmarks, setBookmarks] = useState([]);
 
 	useEffect(() => {
 		const bookmarkKeys = Object.keys(localStorage);
-		const selectedBooks = bookmarkKeys.filter((key) => key !== 'selectedBooks');
-		setBookmarks(
-			selectedBooks.map((bookId) => JSON.parse(localStorage.getItem(bookId)))
-		);
+		if (bookmarkKeys.length === 0) {
+			// call setBookmarks with blank array to empty default bookmark section.
+			setBookmarks([]);
+		} else {
+			const selectedBooks = bookmarkKeys.filter(
+				(key) => key !== 'selectedBooks'
+			);
+			setBookmarks(
+				selectedBooks.map((bookId) => JSON.parse(localStorage.getItem(bookId)))
+			);
+		}
 	}, []);
 
 	const handleRemoveBookmark = (bookId) => {
@@ -20,8 +28,8 @@ const BookmarkList = () => {
 	};
 
 	return (
-		<div>
-			<h2>Bookmarks:</h2>
+		<div className="root-style-bookmark">
+			<h2>Bookmarked Items:</h2>
 			{bookmarks.length === 0 ? (
 				<p>No bookmarks yet.</p>
 			) : (

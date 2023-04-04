@@ -1,0 +1,11 @@
+.root-style-bookmark {
+	text-align: center;
+	width: 800px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.root-style-bookmark button {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
