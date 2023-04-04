@@ -8,9 +8,19 @@
 	border-radius: 3.8rem;
 }
 
+.form-control {
+	width: 450px;
+}
+
 .search-form-elem .form-control {
 	font-size: 2rem;
 	padding: 0.6rem;
+}
+
+.search-form-elem .form-control:focus {
+	outline: none;
+	border: 2px solid blue;
+	box-shadow: 0 0 10px blue;
 }
 
 .search-form-elem .form-control::placeholder {
