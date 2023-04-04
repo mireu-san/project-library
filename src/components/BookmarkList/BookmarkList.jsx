@@ -5,19 +5,17 @@ const BookmarkList = () => {
 	const [bookmarks, setBookmarks] = useState([]);
 
 	useEffect(() => {
-		const selectedBooks = localStorage.getItem('selectedBooks');
-		if (selectedBooks) {
-			const parsedBooks = JSON.parse(selectedBooks);
-			if (Array.isArray(parsedBooks)) {
-				setBookmarks(parsedBooks);
-			}
-		}
+		const bookmarkKeys = Object.keys(localStorage);
+		const selectedBooks = bookmarkKeys.filter((key) => key !== 'selectedBooks');
+		setBookmarks(
+			selectedBooks.map((bookId) => JSON.parse(localStorage.getItem(bookId)))
+		);
 	}, []);
 
 	const handleRemoveBookmark = (bookId) => {
 		localStorage.removeItem(bookId);
 		setBookmarks((prevBookmarks) =>
-			prevBookmarks.filter((bookmark) => bookmark !== bookId)
+			prevBookmarks.filter((bookmark) => bookmark.id !== bookId)
 		);
 	};
 
@@ -27,10 +25,10 @@ const BookmarkList = () => {
 			{bookmarks.length === 0 ? (
 				<p>No bookmarks yet.</p>
 			) : (
-				bookmarks.map((bookId) => (
-					<div key={bookId}>
-						<Book {...JSON.parse(localStorage.getItem(bookId))} />
-						<button onClick={() => handleRemoveBookmark(bookId)}>
+				bookmarks.map((book) => (
+					<div key={book.id}>
+						<Book {...book} />
+						<button onClick={() => handleRemoveBookmark(book.id)}>
 							Remove Bookmark
 						</button>
 					</div>
