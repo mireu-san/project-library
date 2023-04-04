@@ -5,6 +5,7 @@ import coverImg from '../../images/cover_not_found.jpg';
 import './BookDetails.css';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const URL = 'https://openlibrary.org/works/';
 
@@ -12,14 +13,16 @@ const BookDetails = () => {
 	const { id } = useParams();
 	const [loading, setLoading] = useState(false);
 	const [book, setBook] = useState(null);
+	const [error, setError] = useState(null);
 	const navigate = useNavigate();
 
 	useEffect(() => {
 		setLoading(true);
 		async function getBookDetails() {
 			try {
-				const response = await fetch(`${URL}${id}.json`);
-				const data = await response.json();
+				const response = await axios.get(`${URL}${id}`);
+				const data = response.data;
+				// remove this once test is done!
 				console.log(data);
 
 				if (data) {
@@ -48,19 +51,22 @@ const BookDetails = () => {
 						subjects: subjects ? subjects.join(', ') : 'No subjects found',
 					};
 					setBook(newBook);
+					setError(null);
 				} else {
 					setBook(null);
+					setError('No data found for this book.');
 				}
-				setLoading(false);
 			} catch (error) {
 				console.log(error);
-				setLoading(false);
+				setError('Something went wrong. Please try again later.');
 			}
+			setLoading(false);
 		}
 		getBookDetails();
 	}, [id]);
 
 	if (loading) return <Loading />;
+	if (error) return <div>{error}</div>;
 
 	return (
 		<section className="book-details">
@@ -74,31 +80,37 @@ const BookDetails = () => {
 					<span className="fs-18 fw-6">Go Back</span>
 				</button>
 
-				<div className="book-details-content grid">
-					<div className="book-details-img">
-						<img src={book?.cover_img} alt="cover img" />
+				{book ? (
+					<div className="book-details-content grid">
+						<div className="book-details-img">
+							<img src={book.cover_img} alt="cover img" />
+						</div>
+						<div className="book-details-info">
+							<div className="book-details-item title">
+								<span className="fw-6 fs-24">{book.title}</span>
+							</div>
+							<div className="book-details-item description">
+								<span>{book.description}</span>
+							</div>
+							<div className="book-details-item">
+								<span className="fw-6">Subject Places: </span>
+								<span className="text-italic">{book.subject_places}</span>
+							</div>
+							<div className="book-details-item">
+								<span className="fw-6">Subject Times: </span>
+								<span className="text-italic">{book.subject_times}</span>
+							</div>
+							<div className="book-details-item">
+								<span className="fw-6">Subjects: </span>
+								<span>{book.subjects}</span>
+							</div>
+						</div>
 					</div>
-					<div className="book-details-info">
-						<div className="book-details-item title">
-							<span className="fw-6 fs-24">{book?.title}</span>
-						</div>
-						<div className="book-details-item description">
-							<span>{book?.description}</span>
-						</div>
-						<div className="book-details-item">
-							<span className="fw-6">Subject Places: </span>
-							<span className="text-italic">{book?.subject_places}</span>
-						</div>
-						<div className="book-details-item">
-							<span className="fw-6">Subject Times: </span>
-							<span className="text-italic">{book?.subject_times}</span>
-						</div>
-						<div className="book-details-item">
-							<span className="fw-6">Subjects: </span>
-							<span>{book?.subjects}</span>
-						</div>
+				) : (
+					<div className="book-not-found">
+						<span>Book not found!</span>
 					</div>
-				</div>
+				)}
 			</div>
 		</section>
 	);

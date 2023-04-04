@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useCallback } from 'react';
 import PropTypes from 'prop-types';
-
+import axios from 'axios';
 // Highly linked to BookList file.
 
 const URL = 'http://openlibrary.org/search.json?title=';
@@ -16,8 +16,8 @@ const AppProvider = ({ children }) => {
 	const fetchBooks = useCallback(async () => {
 		setLoading(true);
 		try {
-			const response = await fetch(`${URL}${searchTerm}`);
-			const data = await response.json();
+			const response = await axios.get(`${URL}${searchTerm}`);
+			const data = response.data;
 			const { docs } = data;
 			console.log('Data here!', data.docs);
 
