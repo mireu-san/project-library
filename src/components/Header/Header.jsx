@@ -49,7 +49,7 @@ const Header = () => {
 					<motion.p
 						className="header-text fs-18 fw-3"
 						variants={child}
-						style={{ marginRight: '5px' }}
+						style={{ marginRight: '5px', marginTop: '10px' }}
 					>
 						Powered by <a href="https://openlibrary.org/">openlibrary.org</a>
 					</motion.p>

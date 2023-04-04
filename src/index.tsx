@@ -24,8 +24,8 @@ root.render(
 					<Route path="book" element={<BookList />} />
 					<Route path="/book/:id" element={<BookDetails />} />
 					<Route path="/bookmark" element={<BookmarkList />} />
-					{/* <Footer /> */}
 				</Routes>
+				{/* <Footer /> */}
 			</BrowserRouter>
 		</AppProvider>
 	</React.StrictMode>
