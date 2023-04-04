@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import Book from './Book';
+import Book from '../BookList/Book';
 
 const BookmarkList = () => {
 	const [bookmarks, setBookmarks] = useState([]);
 
 	useEffect(() => {
-		const selectedBooks =
-			JSON.parse(localStorage.getItem('selectedBooks')) || {};
-		const bookmarkedBooks = Object.keys(selectedBooks);
-		setBookmarks(bookmarkedBooks);
+		const selectedBooks = localStorage.getItem('selectedBooks');
+		if (selectedBooks) {
+			const parsedBooks = JSON.parse(selectedBooks);
+			if (Array.isArray(parsedBooks)) {
+				setBookmarks(parsedBooks);
+			}
+		}
 	}, []);
 
 	const handleRemoveBookmark = (bookId) => {
-		const selectedBooks =
-			JSON.parse(localStorage.getItem('selectedBooks')) || {};
-		delete selectedBooks[bookId];
-		localStorage.setItem('selectedBooks', JSON.stringify(selectedBooks));
+		localStorage.removeItem(bookId);
 		setBookmarks((prevBookmarks) =>
 			prevBookmarks.filter((bookmark) => bookmark !== bookId)
 		);

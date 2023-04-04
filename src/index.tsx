@@ -8,6 +8,7 @@ import BookList from './components/BookList/BookList';
 import BookDetails from './components/BookDetails/BookDetails';
 import './index.css';
 import Navbar from './components/Navbar/Navbar';
+import BookmarkList from './components/BookmarkList/BookmarkList';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
@@ -22,7 +23,7 @@ root.render(
 					<Route path="about" element={<About />} />
 					<Route path="book" element={<BookList />} />
 					<Route path="/book/:id" element={<BookDetails />} />
-
+					<Route path="/bookmark" element={<BookmarkList />} />
 					{/* <Footer /> */}
 				</Routes>
 			</BrowserRouter>

@@ -7,10 +7,11 @@ const Book = (book) => {
 
 	const handleCheckboxChange = () => {
 		setIsChecked(!isChecked);
-	};
-
-	const handleBookmarkClick = () => {
-		localStorage.setItem(book.id, JSON.stringify(book));
+		if (!isChecked) {
+			localStorage.setItem(book.id, JSON.stringify(book));
+		} else {
+			localStorage.removeItem(book.id);
+		}
 	};
 
 	return (
