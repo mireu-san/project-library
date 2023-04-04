@@ -1,13 +1,18 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
+import { useSpring, animated } from 'react-spring';
 import './SearchForm.css';
 
 const SearchForm = () => {
 	const { setSearchTerm, setResultTitle } = useGlobalContext();
 	const searchText = useRef('');
 	const navigate = useNavigate();
+	const [isFocused, setIsFocused] = useState(false);
+	const animatedSpringForm = useSpring({
+		transform: isFocused ? 'scale(1.2)' : 'scale(1)',
+	});
 
 	useEffect(() => searchText.current.focus(), []);
 	const handleSubmit = (e) => {
@@ -24,11 +29,17 @@ const SearchForm = () => {
 	};
 
 	return (
-		<div className="search-form">
-			<div className="container">
+		<div className="search-form" style={{ position: 'relative' }}>
+			<animated.div className="container" style={animatedSpringForm}>
 				<div className="search-form-content">
 					<form className="search-form" onSubmit={handleSubmit}>
-						<div className="search-form-elem flex flex-sb bg-white">
+						<div
+							className={`search-form-elem flex flex-sb bg-white ${
+								isFocused ? 'focused' : ''
+							}`}
+							onFocus={() => setIsFocused(true)}
+							onBlur={() => setIsFocused(false)}
+						>
 							<input
 								type="text"
 								className="form-control"
@@ -45,7 +56,7 @@ const SearchForm = () => {
 						</div>
 					</form>
 				</div>
-			</div>
+			</animated.div>
 		</div>
 	);
 };
