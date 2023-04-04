@@ -227,3 +227,7 @@ While composing checkbox and bookmark page (solved):
 - After searching a book, there is 'kaikas' error: this is absolutely not linked to the ongoing project in any manner.
 - Try this again from another device later.
 - (solved) It was just a specific browser's issue. Looks like the browser where installed kaikas causes this problem.
+
+# extra
+
+- consider adding rainfall effect to Book.jsx(search result).
