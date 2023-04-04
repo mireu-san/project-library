@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './BookList.css';
+import { useTrail, animated } from 'react-spring';
 
 const Book = (book) => {
 	const [isChecked, setIsChecked] = useState(() => {
@@ -20,49 +21,56 @@ const Book = (book) => {
 		setIsChecked(!isChecked);
 	};
 
+	const trail = useTrail(1, {
+		from: { transform: 'translateX(-50px)', opacity: 0 },
+		to: { transform: 'translateX(0)', opacity: 1 },
+	});
+
 	return (
-		<div className="book-item flex flex-column flex-sb">
-			<div className="book-item-img">
-				<img src={book.cover_img} alt="cover" />
-			</div>
-			<div className="book-item-info text-center">
-				<Link to={`/book/${book.id}`} {...book}>
-					<div className="book-item-info-item title fw-7 fs-18">
-						<span>{book.title}</span>
-					</div>
-				</Link>
+		<animated.div style={trail[0]}>
+			<div className="book-item flex flex-column flex-sb">
+				<div className="book-item-img">
+					<img src={book.cover_img} alt="cover" />
+				</div>
+				<div className="book-item-info text-center">
+					<Link to={`/book/${book.id}`} {...book}>
+						<div className="book-item-info-item title fw-7 fs-18">
+							<span>{book.title}</span>
+						</div>
+					</Link>
 
-				{book.author && (
-					<div className="book-item-info-item author fs-15">
-						<span className="text-capitalize fw-7">Author: </span>
-						<span>{book.author.join(', ')}</span>
-					</div>
-				)}
+					{book.author && (
+						<div className="book-item-info-item author fs-15">
+							<span className="text-capitalize fw-7">Author: </span>
+							<span>{book.author.join(', ')}</span>
+						</div>
+					)}
 
-				{book.edition_count && (
-					<div className="book-item-info-item edition-count fs-15">
-						<span className="text-capitalize fw-7">Total Editions: </span>
-						<span>{book.edition_count}</span>
-					</div>
-				)}
+					{book.edition_count && (
+						<div className="book-item-info-item edition-count fs-15">
+							<span className="text-capitalize fw-7">Total Editions: </span>
+							<span>{book.edition_count}</span>
+						</div>
+					)}
 
-				{book.first_publish_year && (
-					<div className="book-item-info-item publish-year fs-15">
-						<span className="text-capitalize fw-7">First Publish Year: </span>
-						<span>{book.first_publish_year}</span>
-					</div>
-				)}
+					{book.first_publish_year && (
+						<div className="book-item-info-item publish-year fs-15">
+							<span className="text-capitalize fw-7">First Publish Year: </span>
+							<span>{book.first_publish_year}</span>
+						</div>
+					)}
+				</div>
+				<div className="book-item-bookmark">
+					<label>
+						<input
+							type="checkbox"
+							checked={isChecked}
+							onChange={handleCheckboxChange}
+						/>
+					</label>
+				</div>
 			</div>
-			<div className="book-item-bookmark">
-				<label>
-					<input
-						type="checkbox"
-						checked={isChecked}
-						onChange={handleCheckboxChange}
-					/>
-				</label>
-			</div>
-		</div>
+		</animated.div>
 	);
 };
 
