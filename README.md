@@ -1,6 +1,7 @@
-# Basic
+# Prerequisite
 
-To avoid preventable delay in work, this time I would invest half of its time to do search and plan.
+1. npm i
+2. npm run dev (Not npm start!)
 
 # Exception
 
