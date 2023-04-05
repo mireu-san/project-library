@@ -7,7 +7,8 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const URL = 'https://openlibrary.org/works/';
+// const URL = 'https://openlibrary.org/works/';
+const URL = 'http://localhost:3001/works/';
 
 const BookDetails = () => {
 	const { id } = useParams();

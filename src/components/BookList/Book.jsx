@@ -39,10 +39,24 @@ const Book = (book) => {
 						</div>
 					</Link>
 
-					{book.author && (
+					{/* {book.author && (
 						<div className="book-item-info-item author fs-15">
 							<span className="text-capitalize fw-7">Author: </span>
 							<span>{book.author.join(', ')}</span>
+						</div>
+					)} */}
+					{book.author && (
+						<div className="book-item-info-item author fs-15">
+							<span className="text-capitalize fw-7">Author: </span>
+							<span>
+								{book.author.map((author, index) => (
+									// Use React.Fragment here to prevent burden on DOM performance.
+									<React.Fragment key={index}>
+										<span>{author}</span>
+										{index !== book.author.length - 1 && <span>, </span>}
+									</React.Fragment>
+								))}
+							</span>
 						</div>
 					)}
 
