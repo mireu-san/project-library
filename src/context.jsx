@@ -71,10 +71,12 @@ const AppProvider = ({ children }) => {
 	return (
 		<AppContext.Provider
 			value={{
-				loading,
+				// BookList
 				books,
-				setSearchTerm,
+				loading,
 				resultTitle,
+				// SearchForm
+				setSearchTerm,
 				setResultTitle,
 			}}
 		>
