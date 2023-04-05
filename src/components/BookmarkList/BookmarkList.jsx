@@ -35,6 +35,7 @@ const BookmarkList = () => {
 			) : (
 				bookmarks.map((book) => (
 					<div key={book.id}>
+						{/* this spread operator pass all properties from Book.jsx */}
 						<Book {...book} />
 						<button onClick={() => handleRemoveBookmark(book.id)}>
 							Remove Bookmark
