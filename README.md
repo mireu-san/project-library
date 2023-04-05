@@ -236,3 +236,5 @@ While composing checkbox and bookmark page (solved):
 # extra
 
 - consider adding rainfall effect to Book.jsx(search result).
+
+concurrently - https://bin-repository.tistory.com/138
