@@ -2,6 +2,10 @@
 
 To avoid preventable delay in work, this time I would invest half of its time to do search and plan.
 
+# Exception
+
+- used react-context instead of Recoil.
+
 # Goal
 
 - make a gothic like library design, calm and silent.
