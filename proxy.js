@@ -14,6 +14,9 @@ app.use(
 	})
 );
 
+// modify this port number if you have conflict with other opened port number.
 app.listen(3001, () => {
-	console.log('Proxy server listening on port 3001');
+	console.log(
+		'You now use port 3001 for proxy. Library App port number will be 3000. See proxy.js file to modify proxy port number'
+	);
 });
