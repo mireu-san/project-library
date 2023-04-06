@@ -43,7 +43,7 @@ const BookList = () => {
 				<input
 					type="text"
 					className="book-filter-input"
-					placeholder="Input keyword to filter the list."
+					placeholder="Filter the list by title."
 					value={filterKeyword}
 					onChange={handleFilterChange}
 				/>
