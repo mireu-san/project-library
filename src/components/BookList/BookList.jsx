@@ -9,6 +9,8 @@ const BookList = () => {
 	const { books, loading, resultTitle } = useGlobalContext();
 	const [filterKeyword, setFilterKeyword] = useState('');
 	const [filteredBooks, setFilteredBooks] = useState([]);
+	const [currentPage, setCurrentPage] = useState(1);
+	const booksPerPage = 10;
 
 	useEffect(() => {
 		const bookCovers = books.map((singleBook) => {
@@ -32,7 +34,15 @@ const BookList = () => {
 		setFilterKeyword(e.target.value);
 	};
 
+	const handlePageChange = (newPage) => {
+		setCurrentPage(newPage);
+	};
+
 	if (loading) return <Loading />;
+
+	const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
+	const startIndex = (currentPage - 1) * booksPerPage;
+	const endIndex = startIndex + booksPerPage;
 
 	return (
 		<section className="booklist">
@@ -48,9 +58,22 @@ const BookList = () => {
 					onChange={handleFilterChange}
 				/>
 				<div className="booklist-content grid">
-					{filteredBooks.slice(0, 30).map((item, index) => {
+					{filteredBooks.slice(startIndex, endIndex).map((item, index) => {
 						return <Book key={index} {...item} />;
 					})}
+				</div>
+				<div className="pagination">
+					{Array.from({ length: totalPages }, (_, index) => (
+						<button
+							key={index}
+							className={`pagination-button ${
+								currentPage === index + 1 ? 'active' : ''
+							}`}
+							onClick={() => handlePageChange(index + 1)}
+						>
+							{index + 1}
+						</button>
+					))}
 				</div>
 			</div>
 		</section>
