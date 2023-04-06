@@ -1,25 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGlobalContext } from '../../context';
 import Book from './Book';
 import Loading from '../Loader/Loader';
 import coverImg from '../../images/cover_not_found.jpg';
 import './BookList.css';
 
-// Highly linked to context file.
-
 const BookList = () => {
 	const { books, loading, resultTitle } = useGlobalContext();
-	const bookCovers = books.map((singleBook) => {
-		return {
-			// load
-			...singleBook,
-			// remove /works/ and get id only.
-			id: singleBook.id.replace('/works/', ''),
-			cover_img: singleBook.cover_id
-				? `https://covers.openlibrary.org/b/id/${singleBook.cover_id}-L.jpg`
-				: coverImg,
-		};
-	});
+	const [filterKeyword, setFilterKeyword] = useState('');
+	const [filteredBooks, setFilteredBooks] = useState([]);
+
+	useEffect(() => {
+		const bookCovers = books.map((singleBook) => {
+			return {
+				...singleBook,
+				id: singleBook.id.replace('/works/', ''),
+				cover_img: singleBook.cover_id
+					? `https://covers.openlibrary.org/b/id/${singleBook.cover_id}-L.jpg`
+					: coverImg,
+			};
+		});
+
+		const keyword = filterKeyword.toLowerCase();
+		const newFilteredBooks = bookCovers.filter((book) =>
+			book.title.toLowerCase().includes(keyword)
+		);
+		setFilteredBooks(newFilteredBooks);
+	}, [books, filterKeyword]);
+
+	const handleFilterChange = (e) => {
+		setFilterKeyword(e.target.value);
+	};
 
 	if (loading) return <Loading />;
 
@@ -29,8 +40,15 @@ const BookList = () => {
 				<div className="section-title">
 					<h2>{resultTitle}</h2>
 				</div>
+				<input
+					type="text"
+					className="book-filter-input"
+					placeholder="Input keyword to filter the list."
+					value={filterKeyword}
+					onChange={handleFilterChange}
+				/>
 				<div className="booklist-content grid">
-					{bookCovers.slice(0, 30).map((item, index) => {
+					{filteredBooks.slice(0, 30).map((item, index) => {
 						return <Book key={index} {...item} />;
 					})}
 				</div>
