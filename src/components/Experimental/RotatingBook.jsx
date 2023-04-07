@@ -14,7 +14,7 @@ function Book(props) {
 	return (
 		<mesh ref={meshRef} {...props}>
 			<boxGeometry args={[1, 1.5, 0.1]} />
-			<meshStandardMaterial color="blue" />
+			<meshStandardMaterial color="orange" />
 		</mesh>
 	);
 }
