@@ -85,12 +85,12 @@ const BookmarkList = () => {
 							/>
 							<img src={book.cover_img} alt="cover" className="book-image" />
 							<div className="book-details">
-								<span className="book-title">{book.title}</span>
-								<span className="book-author">{book.author}</span>
-								<span className="book-edition-count">{book.edition_count}</span>
-								<span className="book-first-publish-year">
+								<p className="book-title">{book.title}</p>
+								<p className="book-author">{book.author}</p>
+								<p className="book-edition-count">{book.edition_count}</p>
+								<p className="book-first-publish-year">
 									{book.first_publish_year}
-								</span>
+								</p>
 							</div>
 						</label>
 						<button

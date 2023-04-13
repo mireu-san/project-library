@@ -6,7 +6,7 @@
 .navbar-brand {
 	width: 90px;
 }
-.navbar-brand span {
+.navbar-brand p {
 	margin-left: 2rem;
 }
 .brand-and-toggler {

@@ -9,7 +9,7 @@
 .back-btn:hover {
 	color: var(--purple-color);
 }
-.back-btn span {
+.back-btn p {
 	margin-left: 1rem;
 }
 .book-details-content {

@@ -46,44 +46,42 @@ const Book = (book) => {
 					<div className="book-item-info text-center">
 						<Link to={`/book/${book.id}`} {...book}>
 							<div className="book-item-info-item title fw-7 fs-18">
-								<span>{book.title}</span>
+								<p>{book.title}</p>
 							</div>
 						</Link>
 
 						{/* {book.author && (
 						<div className="book-item-info-item author fs-15">
-							<span className="text-capitalize fw-7">Author: </span>
-							<span>{book.author.join(', ')}</span>
+							<p className="text-capitalize fw-7">Author: </p>
+							<p>{book.author.join(', ')}</p>
 						</div>
 					)} */}
 						{book.author && (
 							<div className="book-item-info-item author fs-15">
-								<span className="text-capitalize fw-7">Author: </span>
-								<span>
+								<p className="text-capitalize fw-7">Author: </p>
+								<p>
 									{book.author.map((author, index) => (
 										// Use React.Fragment here to prevent burden on DOM performance.
 										<React.Fragment key={index}>
-											<span>{author}</span>
-											{index !== book.author.length - 1 && <span>, </span>}
+											<p>{author}</p>
+											{index !== book.author.length - 1 && <p>, </p>}
 										</React.Fragment>
 									))}
-								</span>
+								</p>
 							</div>
 						)}
 
 						{book.edition_count && (
 							<div className="book-item-info-item edition-count fs-15">
-								<span className="text-capitalize fw-7">Total Editions: </span>
-								<span>{book.edition_count}</span>
+								<p className="text-capitalize fw-7">Total Editions: </p>
+								<p>{book.edition_count}</p>
 							</div>
 						)}
 
 						{book.first_publish_year && (
 							<div className="book-item-info-item publish-year fs-15">
-								<span className="text-capitalize fw-7">
-									First Publish Year:{' '}
-								</span>
-								<span>{book.first_publish_year}</span>
+								<p className="text-capitalize fw-7">First Publish Year: </p>
+								<p>{book.first_publish_year}</p>
 							</div>
 						)}
 					</div>

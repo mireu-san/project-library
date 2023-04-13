@@ -12,9 +12,9 @@ const Navbar = () => {
 			<div className="container navbar-content flex">
 				<div className="brand-and-toggler flex flex-sb">
 					<Link to="/" className="navbar-brand flex">
-						<span className="text-uppercase text-white fw-7 fs-24 ls-1">
+						<p className="text-uppercase text-white fw-7 fs-24 ls-1">
 							Private Book Searcher
-						</span>
+						</p>
 					</Link>
 					<button
 						type="button"

@@ -77,7 +77,7 @@ const BookDetails = () => {
 					onClick={() => navigate('/book')}
 				>
 					<FaArrowLeft size={22} />
-					<span className="fs-18 fw-6">Go Back</span>
+					<p className="fs-18 fw-6">Go Back</p>
 				</button>
 
 				{book ? (
@@ -87,28 +87,28 @@ const BookDetails = () => {
 						</div>
 						<div className="book-details-info">
 							<div className="book-details-item title">
-								<span className="fw-6 fs-24">{book.title}</span>
+								<p className="fw-6 fs-24">{book.title}</p>
 							</div>
 							<div className="book-details-item description">
-								<span>{book.description}</span>
+								<p>{book.description}</p>
 							</div>
 							<div className="book-details-item">
-								<span className="fw-6">Subject Places: </span>
-								<span className="text-italic">{book.subject_places}</span>
+								<p className="fw-6">Subject Places: </p>
+								<p className="text-italic">{book.subject_places}</p>
 							</div>
 							<div className="book-details-item">
-								<span className="fw-6">Subject Times: </span>
-								<span className="text-italic">{book.subject_times}</span>
+								<p className="fw-6">Subject Times: </p>
+								<p className="text-italic">{book.subject_times}</p>
 							</div>
 							<div className="book-details-item">
-								<span className="fw-6">Subjects: </span>
-								<span>{book.subjects}</span>
+								<p className="fw-6">Subjects: </p>
+								<p>{book.subjects}</p>
 							</div>
 						</div>
 					</div>
 				) : (
 					<div className="book-not-found">
-						<span>Book not found!</span>
+						<p>Book not found!</p>
 					</div>
 				)}
 			</div>

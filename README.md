@@ -238,3 +238,70 @@ While composing checkbox and bookmark page (solved):
 - consider adding rainfall effect to Book.jsx(search result).
 
 concurrently - https://bin-repository.tistory.com/138
+
+```
+
+├─ src
+│  ├─ 3d
+│  │  └─ viking_book
+│  │     ├─ license.txt
+│  │     ├─ scene.bin
+│  │     ├─ scene.gltf
+│  │     └─ textures
+│  │        ├─ lambert5SG_baseColor.png
+│  │        ├─ lambert5SG_emissive.png
+│  │        ├─ MeshSG_baseColor.png
+│  │        ├─ MeshSG_emissive.png
+│  │        ├─ MeshSG_metallicRoughness.png
+│  │        └─ MeshSG_normal.png
+│  ├─ components
+│  │  ├─ BookDetails
+│  │  │  ├─ BookDetails.css
+│  │  │  └─ BookDetails.jsx
+│  │  ├─ BookList
+│  │  │  ├─ Book.jsx
+│  │  │  ├─ BookList.css
+│  │  │  └─ BookList.jsx
+│  │  ├─ BookmarkList
+│  │  │  ├─ BookmarkList.css
+│  │  │  └─ BookmarkList.jsx
+│  │  ├─ Experimental
+│  │  │  └─ Book.jsx
+│  │  ├─ Footer
+│  │  │  ├─ Footer.css
+│  │  │  └─ Footer.jsx
+│  │  ├─ Header
+│  │  │  ├─ Header.css
+│  │  │  └─ Header.jsx
+│  │  ├─ Loader
+│  │  │  ├─ Loader.css
+│  │  │  └─ Loader.jsx
+│  │  ├─ Navbar
+│  │  │  ├─ Navbar.css
+│  │  │  └─ Navbar.jsx
+│  │  └─ SearchForm
+│  │     ├─ SearchForm.css
+│  │     └─ SearchForm.jsx
+│  ├─ context.jsx
+│  ├─ custom.d.ts
+│  ├─ images
+│  │  ├─ about-img.jpg
+│  │  ├─ book.svg
+│  │  ├─ cover_not_found.jpg
+│  │  ├─ home.webp
+│  │  ├─ library-bg.gif
+│  │  ├─ library-bg2.gif
+│  │  ├─ library3.gif
+│  │  ├─ loader.svg
+│  │  └─ loader2.svg
+│  ├─ index.css
+│  ├─ index.tsx
+│  └─ pages
+│     ├─ About
+│     │  ├─ About.css
+│     │  └─ About.jsx
+│     └─ Home
+│        └─ Home.jsx
+└─ tsconfig.json
+
+```
