@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SearchForm from '../SearchForm/SearchForm';
 import './Header.css';
-import RotatingBook from '../Experimental/RotatingBook';
 
 const Header = () => {
 	const container = {
@@ -55,7 +54,6 @@ const Header = () => {
 						Powered by <a href="https://openlibrary.org/">openlibrary.org</a>
 					</motion.p>
 					<SearchForm />
-					<RotatingBook />
 				</motion.div>
 			</header>
 		</div>
