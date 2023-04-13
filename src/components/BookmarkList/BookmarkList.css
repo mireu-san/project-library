@@ -6,43 +6,11 @@
 	margin-bottom: 40px;
 }
 
-.root-style-bookmark button {
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-
-p {
-	margin-bottom: 10px;
-}
-
-.download-button-container {
-	display: flex;
-	justify-content: center;
-	margin-top: 1rem;
-}
-
-.download-button {
-	padding: 1rem 2rem;
-	border-radius: 4px;
-	background-color: #007bff;
-	color: white;
-	border: none;
-	font-size: 1rem;
-	cursor: pointer;
-	transition: background-color 0.2s ease-in-out;
-}
-
-.download-button:disabled {
-	background-color: #ced4da;
-	cursor: not-allowed;
-}
-
-.download-button:hover {
-	background-color: #0069d9;
-}
-
-.no-bookmark-message {
-	margin-top: 1rem;
+@media (max-width: 768px) {
+	.root-style-bookmark {
+		width: 100%;
+		padding: 0 1rem;
+	}
 }
 
 .bookmark-container {
@@ -50,22 +18,42 @@ p {
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 1rem;
-	text-align: center;
+	text-align: left;
 	margin: auto;
 	background-color: #f8f9fa;
 	padding: 1rem;
 	border-radius: 4px;
-	box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px 0px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px 0px;
 	transition: box-shadow 0.2s ease-in-out;
 }
 
-.bookmark-container:hover {
-	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+@media (max-width: 768px) {
+	.bookmark-container {
+		flex-direction: column;
+		padding: 0.5rem;
+	}
+}
+
+.book-content {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 1rem;
+	border-radius: 4px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px 0px;
+}
+
+@media (max-width: 768px) {
+	.book-content {
+		flex-direction: column;
+	}
 }
 
 .book-label {
 	display: flex;
 	align-items: center;
+	flex-grow: 1;
+	padding-left: 1rem;
 }
 
 .book-checkbox {
@@ -75,12 +63,29 @@ p {
 
 .book-image {
 	max-width: 180px;
-	margin-right: auto;
-	margin-left: auto;
+	margin-right: 10rem;
+	margin-left: 5rem;
+}
+
+@media (max-width: 768px) {
+	.book-image {
+		margin-right: 0;
+		margin-left: 1.5rem;
+		margin-bottom: 1rem;
+	}
 }
 
 .book-details {
-	margin-left: 1rem;
+	display: flex;
+	flex-direction: column;
+	margin-left: 3rem;
+}
+
+@media (max-width: 768px) {
+	.book-details {
+		margin-left: 1.5rem;
+		order: 1;
+	}
 }
 
 .book-title {
@@ -99,4 +104,46 @@ p {
 .book-edition-count:last-child,
 .book-first-publish-year:last-child {
 	margin-right: 0;
+}
+
+.remove-bookmark-button {
+	margin-top: 1.5rem;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	background-color: #dc3545;
+	color: white;
+	border: none;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.remove-bookmark-button:hover {
+	background-color: #c82333;
+}
+
+.download-button {
+	padding: 0.5rem 1.5rem;
+	border: 1px solid #a88734;
+	border-radius: 4px;
+	background-color: #f0c14b;
+	color: #111;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset,
+		0 1px 0 rgba(0, 0, 0, 0.15);
+	margin-bottom: 2rem;
+}
+
+.download-button:hover {
+	background-color: #ff9900;
+	border-color: #a85d0e;
+}
+
+.download-button:disabled {
+	background-color: #ced4da;
+	border-color: #adb5bd;
+	cursor: not-allowed;
 }

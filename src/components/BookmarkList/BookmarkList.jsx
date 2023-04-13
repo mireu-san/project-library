@@ -57,14 +57,14 @@ const BookmarkList = () => {
 
 	return (
 		<div className="root-style-bookmark">
-			<h2>Bookmarked Items:</h2>
+			<h2>Bookmarked Items</h2>
 			<div className="download-button-container">
 				<button
 					onClick={handleDownloadFile}
 					disabled={selectedBooks.length === 0}
 					className="download-button"
 				>
-					Download File
+					Extract the list as a text file
 				</button>
 			</div>
 			{bookmarks.length === 0 ? (
@@ -72,33 +72,35 @@ const BookmarkList = () => {
 			) : (
 				bookmarks.map((book) => (
 					<div key={book.id} className="bookmark-container">
-						<label className="book-label">
-							<input
-								type="checkbox"
-								checked={selectedBooks.includes(book.id)}
-								onChange={(e) =>
-									e.target.checked
-										? handleBookSelect(book.id)
-										: handleBookDeselect(book.id)
-								}
-								className="book-checkbox"
-							/>
-							<img src={book.cover_img} alt="cover" className="book-image" />
-							<div className="book-details">
-								<p className="book-title">{book.title}</p>
-								<p className="book-author">{book.author}</p>
-								<p className="book-edition-count">{book.edition_count}</p>
-								<p className="book-first-publish-year">
-									{book.first_publish_year}
-								</p>
-							</div>
-						</label>
-						<button
-							onClick={() => handleRemoveBookmark(book.id)}
-							className="remove-bookmark-button"
-						>
-							Remove Bookmark
-						</button>
+						<div className="book-content">
+							<label className="book-label">
+								<input
+									type="checkbox"
+									checked={selectedBooks.includes(book.id)}
+									onChange={(e) =>
+										e.target.checked
+											? handleBookSelect(book.id)
+											: handleBookDeselect(book.id)
+									}
+									className="book-checkbox"
+								/>
+								<img src={book.cover_img} alt="cover" className="book-image" />
+								<div className="book-details">
+									<p className="book-title">{book.title}</p>
+									<p className="book-author">{book.author}</p>
+									<p className="book-edition-count">{book.edition_count}</p>
+									<p className="book-first-publish-year">
+										{book.first_publish_year}
+									</p>
+									<button
+										onClick={() => handleRemoveBookmark(book.id)}
+										className="remove-bookmark-button"
+									>
+										Remove Bookmark
+									</button>
+								</div>
+							</label>
+						</div>
 					</div>
 				))
 			)}
