@@ -16,7 +16,14 @@
 		"project": ["./tsconfig.json"]
 	},
 	"plugins": ["react", "@typescript-eslint"],
-	"rules": {},
+	"rules": {
+		"react/no-unknown-property": [
+			"error",
+			{
+				"ignore": ["rotation"]
+			}
+		]
+	},
 	"settings": {
 		"react": {
 			"version": "detect"

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SearchForm from '../SearchForm/SearchForm';
 // import Book from '../Experimental/Book';
+import StarsCanvas from '../canvas/Stars';
 import './Header.css';
 
 const Header = () => {
@@ -56,6 +57,7 @@ const Header = () => {
 					</motion.p>
 					<SearchForm />
 					{/* <Book /> */}
+					<StarsCanvas />
 				</motion.div>
 			</header>
 		</div>
