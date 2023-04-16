@@ -1,0 +1,11 @@
+Model Information:
+* title:	Reading corner
+* source:	https://sketchfab.com/3d-models/reading-corner-5c7b130027c643629dcac7ea9a892224
+* author:	marrkus (https://sketchfab.com/marrkus)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Reading corner" (https://sketchfab.com/3d-models/reading-corner-5c7b130027c643629dcac7ea9a892224) by marrkus (https://sketchfab.com/marrkus) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
