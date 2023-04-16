@@ -56,7 +56,12 @@ const Header = () => {
 						Powered by <a href="https://openlibrary.org/">openlibrary.org</a>
 					</motion.p>
 					<div
-						style={{ position: 'absolute', zIndex: 2, marginBottom: '20px' }}
+						style={{
+							position: 'absolute',
+							zIndex: 2,
+							marginTop: '30px',
+							marginBottom: '20px',
+						}}
 					>
 						<SearchForm />
 					</div>
