@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SearchForm from '../SearchForm/SearchForm';
-// import Book from '../Experimental/Book';
 import StarsCanvas from '../canvas/Stars';
+import EarthCanvas from '../canvas/Earth';
 import './Header.css';
 
 const Header = () => {
@@ -51,13 +51,21 @@ const Header = () => {
 					<motion.p
 						className="header-text fs-18 fw-3"
 						variants={child}
-						style={{ marginRight: '5px', marginTop: '10px' }}
+						// style={{ marginRight: '5px', marginTop: '20px' }}
 					>
 						Powered by <a href="https://openlibrary.org/">openlibrary.org</a>
 					</motion.p>
-					<SearchForm />
-					{/* <Book /> */}
-					<StarsCanvas />
+					<div
+						style={{ position: 'absolute', zIndex: 2, marginBottom: '20px' }}
+					>
+						<SearchForm />
+					</div>
+					<div style={{ position: 'absolute', zIndex: 0 }}>
+						<StarsCanvas />
+					</div>
+					<div style={{ position: 'relative', zIndex: 1, marginTop: '80px' }}>
+						<EarthCanvas />
+					</div>
 				</motion.div>
 			</header>
 		</div>
