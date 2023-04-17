@@ -5,6 +5,8 @@
 	overflow: hidden;
 }
 
+/* edited BookList.css to avoid duplicated background-image (history and bookmark) */
+
 .booklist::before,
 .book-details::before {
 	content: '';
