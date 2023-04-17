@@ -35,13 +35,17 @@ const BookmarkList = () => {
 		setSelectedBooks(selectedBooks.filter((id) => id !== bookId));
 	};
 
-	const handleDownloadFile = () => {
-		const fileContents = selectedBooks
+	const createFileContents = () => {
+		return selectedBooks
 			.map((bookId) => {
 				const book = bookmarks.find((b) => b.id === bookId);
-				return `${book.title} by ${book.author} (First published: ${book.first_publish_year})`;
+				return `Title: ${book.title}\nAuthor: ${book.author}\nFirst published: ${book.first_publish_year}`;
 			})
 			.join('\n\n');
+	};
+
+	const handleDownloadFile = () => {
+		const fileContents = createFileContents();
 
 		// Download all checked books/book as txt file
 		const blob = new Blob([fileContents], { type: 'text/plain' });
@@ -89,10 +93,12 @@ const BookmarkList = () => {
 								<img src={book.cover_img} alt="cover" className="book-image" />
 								<div className="book-details">
 									<p className="book-title">{book.title}</p>
-									<p className="book-author">{book.author}</p>
-									<p className="book-edition-count">{book.edition_count}</p>
+									<p className="book-author">Author: {book.author}</p>
+									<p className="book-edition-count">
+										Edition: {book.edition_count}
+									</p>
 									<p className="book-first-publish-year">
-										{book.first_publish_year}
+										Published: {book.first_publish_year}
 									</p>
 									<button
 										onClick={() => handleRemoveBookmark(book.id)}
