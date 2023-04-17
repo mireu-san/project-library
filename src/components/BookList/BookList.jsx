@@ -3,6 +3,7 @@ import { useGlobalContext } from '../../context';
 import Book from './Book';
 import Loading from '../Loader/Loader';
 import coverImg from '../../images/cover_not_found.jpg';
+import Pagination from '../Pagination/Pagination';
 import './BookList.css';
 
 const BookList = () => {
@@ -40,6 +41,7 @@ const BookList = () => {
 
 	if (loading) return <Loading />;
 
+	// pagination
 	const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
 	const startIndex = (currentPage - 1) * booksPerPage;
 	const endIndex = startIndex + booksPerPage;
@@ -57,24 +59,21 @@ const BookList = () => {
 					value={filterKeyword}
 					onChange={handleFilterChange}
 				/>
+				<Pagination
+					totalPages={totalPages}
+					currentPage={currentPage}
+					onPageChange={handlePageChange}
+				/>
 				<div className="booklist-content grid">
 					{filteredBooks.slice(startIndex, endIndex).map((item, index) => {
 						return <Book key={index} {...item} />;
 					})}
 				</div>
-				<div className="pagination">
-					{Array.from({ length: totalPages }, (_, index) => (
-						<button
-							key={index}
-							className={`pagination-button ${
-								currentPage === index + 1 ? 'active' : ''
-							}`}
-							onClick={() => handlePageChange(index + 1)}
-						>
-							{index + 1}
-						</button>
-					))}
-				</div>
+				<Pagination
+					totalPages={totalPages}
+					currentPage={currentPage}
+					onPageChange={handlePageChange}
+				/>
 			</div>
 		</section>
 	);
