@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './BookmarkList.css';
+import noteIcon from '../../images/note.svg';
 
 const BookmarkList = () => {
 	const [bookmarks, setBookmarks] = useState([]);
@@ -38,9 +39,9 @@ const BookmarkList = () => {
 		const fileContents = selectedBooks
 			.map((bookId) => {
 				const book = bookmarks.find((b) => b.id === bookId);
-				return book.title;
+				return `${book.title} by ${book.author} (First published: ${book.first_publish_year})`;
 			})
-			.join('\n');
+			.join('\n\n');
 
 		// Download all checked books/book as txt file
 		const blob = new Blob([fileContents], { type: 'text/plain' });
@@ -62,8 +63,10 @@ const BookmarkList = () => {
 					onClick={handleDownloadFile}
 					disabled={selectedBooks.length === 0}
 					className="download-button"
+					aria-disabled={selectedBooks.length === 0}
 				>
-					Extract the list as a text file
+					<img src={noteIcon} alt="" className="download-icon" />
+					Extract!
 				</button>
 			</div>
 			{bookmarks.length === 0 ? (
