@@ -11,8 +11,8 @@ const Bookshelf = () => {
 	return (
 		<primitive
 			object={bookshelf.scene}
-			scale={2.5}
-			position-y={0}
+			scale={2}
+			position-y={-1.8}
 			rotation-y={0}
 		/>
 	);

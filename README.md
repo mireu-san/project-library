@@ -305,3 +305,7 @@ concurrently - https://bin-repository.tistory.com/138
 └─ tsconfig.json
 
 ```
+
+threejs model
+
+- https://sketchfab.com/3d-models/reading-corner-5c7b130027c643629dcac7ea9a892224

@@ -8,8 +8,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100%; /* set height to 100% */
-	overflow: auto; /* add overflow property */
+	height: 100%;
+	overflow: auto;
 }
 .header-title {
 	font-size: 4.2rem;
@@ -23,4 +23,15 @@
 
 .header-text a {
 	color: white;
+}
+
+@media screen and (max-width: 480px) {
+	.header-title {
+		font-size: 2.5rem;
+	}
+	.header-text {
+		font-size: 1rem;
+		margin-top: -1rem;
+		margin-bottom: 1.5rem;
+	}
 }

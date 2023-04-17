@@ -9,7 +9,7 @@ import BookDetails from './components/BookDetails/BookDetails';
 import './index.css';
 import Navbar from './components/Navbar/Navbar';
 import BookmarkList from './components/BookmarkList/BookmarkList';
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 
 const root = ReactDOM.createRoot(
 	document.getElementById('root') as HTMLElement
@@ -26,7 +26,7 @@ root.render(
 					<Route path="/book/:id" element={<BookDetails />} />
 					<Route path="/bookmark" element={<BookmarkList />} />
 				</Routes>
-				<Footer />
+				{/* <Footer /> */}
 			</BrowserRouter>
 		</AppProvider>
 	</React.StrictMode>

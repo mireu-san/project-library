@@ -1,4 +1,4 @@
-.root-style-footer {
+.footer {
 	background-color: var(--black-color);
-	height: 10vh;
+	min-height: 20vh;
 }

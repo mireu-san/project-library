@@ -48,11 +48,7 @@ const Header = () => {
 						Welcome to Library.Mireu-san
 					</motion.h2>
 					<br />
-					<motion.p
-						className="header-text fs-18 fw-3"
-						variants={child}
-						// style={{ marginRight: '5px', marginTop: '20px' }}
-					>
+					<motion.p className="header-text fs-18 fw-3" variants={child}>
 						Powered by <a href="https://openlibrary.org/">openlibrary.org</a>
 					</motion.p>
 					<div
