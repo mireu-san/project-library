@@ -75,14 +75,14 @@
 	}
 }
 
-.book-details {
+.bookmark-list .book-details {
 	display: flex;
 	flex-direction: column;
 	margin-left: 3rem;
 }
 
 @media (max-width: 768px) {
-	.book-details {
+	.bookmark-list .book-details {
 		margin-left: 1.5rem;
 		order: 1;
 	}

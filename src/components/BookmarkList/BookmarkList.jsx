@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import Book from '../BookList/Book';
 import './BookmarkList.css';
 
 const BookmarkList = () => {
@@ -56,7 +55,7 @@ const BookmarkList = () => {
 	};
 
 	return (
-		<div className="root-style-bookmark">
+		<div className="root-style-bookmark bookmark-list">
 			<h2>Bookmarked Items</h2>
 			<div className="download-button-container">
 				<button
