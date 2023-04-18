@@ -1,6 +1,12 @@
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
 .bookmark-list-wrapper {
 	background-color: #adb5bd;
-	height: 100vh;
+	height: 100%; /* Change this from 100vh to 100% */
 }
 
 h2 {

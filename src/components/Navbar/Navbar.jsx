@@ -7,11 +7,15 @@ const Navbar = () => {
 	const [toggleMenu, setToggleMenu] = useState(false);
 	const handleNavbar = () => setToggleMenu(!toggleMenu);
 
+	const closeNavbar = () => {
+		setToggleMenu(false);
+	};
+
 	return (
 		<nav className="navbar" id="navbar">
 			<div className="container navbar-content flex">
 				<div className="brand-and-toggler flex flex-sb">
-					<Link to="/" className="navbar-brand flex">
+					<Link to="/" className="navbar-brand flex" onClick={closeNavbar}>
 						<p className="text-uppercase text-white fw-7 fs-24 ls-1">
 							Private Book Searcher
 						</p>
@@ -44,6 +48,7 @@ const Navbar = () => {
 							<Link
 								to="book"
 								className="nav-link text-uppercase text-white fs-22 fw-6 ls-1"
+								onClick={closeNavbar}
 							>
 								History
 							</Link>
@@ -52,6 +57,7 @@ const Navbar = () => {
 							<Link
 								to="about"
 								className="nav-link text-uppercase text-white fs-22 fw-6 ls-1"
+								onClick={closeNavbar}
 							>
 								About
 							</Link>
@@ -60,6 +66,7 @@ const Navbar = () => {
 							<Link
 								to="bookmark"
 								className="nav-link text-uppercase text-white fs-22 fw-6 ls-1"
+								onClick={closeNavbar}
 							>
 								Bookmark
 							</Link>
