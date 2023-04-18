@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 // Highly linked to BookList file.
 
-const URL = 'http://openlibrary.org/search.json?title=';
+const URL = 'https://openlibrary.org/search.json?title=';
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
