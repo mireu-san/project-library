@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './BookmarkList.css';
 import noteIcon from '../../images/note.svg';
+import RemoveModal from '../BookmarkModal/RemoveModal';
 
 const BookmarkList = () => {
 	const [bookmarks, setBookmarks] = useState([]);
@@ -20,10 +21,25 @@ const BookmarkList = () => {
 		}
 	}, []);
 
-	const handleRemoveBookmark = (bookId) => {
+	const [showRemoveModal, setShowRemoveModal] = useState({
+		show: false,
+		bookId: null,
+		bookTitle: null,
+	});
+
+	const handleRemoveBookmark = (bookId, bookTitle) => {
 		localStorage.removeItem(bookId);
 		setBookmarks((prevBookmarks) =>
 			prevBookmarks.filter((bookmark) => bookmark.id !== bookId)
+		);
+
+		// Show the RemoveModal and set the bookId
+		setShowRemoveModal({ show: true, bookId, bookTitle });
+
+		// Hide the RemoveModal after 2 seconds
+		setTimeout(
+			() => setShowRemoveModal({ show: false, bookId: null, bookTitle: null }),
+			2000
 		);
 	};
 
@@ -39,7 +55,7 @@ const BookmarkList = () => {
 		return selectedBooks
 			.map((bookId) => {
 				const book = bookmarks.find((b) => b.id === bookId);
-				return `Title: ${book.title}\nAuthor: ${book.author}\nFirst published: ${book.first_publish_year}`;
+				return `Title: ${book.title}\nAuthor: ${book.author}\nPublished: ${book.first_publish_year}`;
 			})
 			.join('\n\n');
 	};
@@ -101,7 +117,7 @@ const BookmarkList = () => {
 										Published: {book.first_publish_year}
 									</p>
 									<button
-										onClick={() => handleRemoveBookmark(book.id)}
+										onClick={() => handleRemoveBookmark(book.id, book.title)}
 										className="remove-bookmark-button"
 									>
 										Remove Bookmark
@@ -112,6 +128,11 @@ const BookmarkList = () => {
 					</div>
 				))
 			)}
+			<RemoveModal
+				show={showRemoveModal.show}
+				bookId={showRemoveModal.bookId}
+				bookTitle={showRemoveModal.bookTitle} // Pass the bookTitle prop
+			/>
 		</div>
 	);
 };

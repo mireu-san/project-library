@@ -1,0 +1,24 @@
+.bookmark-modal-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+}
+
+.bookmark-modal {
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 80px 10px;
+	border-radius: 5px;
+	color: #ffffff;
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+.star-symbol {
+	text-align: center;
+}

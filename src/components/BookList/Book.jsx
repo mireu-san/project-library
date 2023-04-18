@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './BookList.css';
 import { useSpring, animated } from 'react-spring';
 import Tilt from 'react-parallax-tilt';
+import BookmarkModal from '../BookmarkModal/BookmarkModal';
 
 const Book = (book) => {
 	const [isChecked, setIsChecked] = useState(() => {
@@ -18,8 +19,17 @@ const Book = (book) => {
 		}
 	}, [isChecked, book.id]);
 
+	const [modalVisible, setModalVisible] = useState(false);
+
 	const handleCheckboxChange = () => {
-		setIsChecked(!isChecked);
+		setIsChecked((prevIsChecked) => {
+			const updatedIsChecked = !prevIsChecked;
+			if (updatedIsChecked) {
+				setModalVisible(true);
+				setTimeout(() => setModalVisible(false), 2000);
+			}
+			return updatedIsChecked;
+		});
 	};
 
 	const [isHovered, setIsHovered] = useState(false);
@@ -32,6 +42,11 @@ const Book = (book) => {
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
+			<BookmarkModal
+				show={modalVisible}
+				setIsChecked={setIsChecked}
+				isChecked={isChecked}
+			/>
 			<Tilt
 				tiltReverse={true}
 				className="tilt"
