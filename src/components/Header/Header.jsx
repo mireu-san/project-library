@@ -49,7 +49,7 @@ const Header = () => {
 					</motion.h2>
 					<br />
 					<motion.p className="header-text fs-18 fw-3" variants={child}>
-						Powered by <a href="https://openlibrary.org/">openlibrary.org</a>
+						Powered by openlibrary.org
 					</motion.p>
 					<div
 						style={{
@@ -64,9 +64,21 @@ const Header = () => {
 					<div style={{ position: 'absolute', zIndex: 0 }}>
 						<StarsCanvas />
 					</div>
-					<div style={{ position: 'relative', zIndex: 1, marginTop: '80px' }}>
+					<div style={{ position: 'relative', zIndex: 1, marginTop: '100px' }}>
 						<EarthCanvas />
 					</div>
+					<p style={{ position: 'relative', zIndex: 2 }}>
+						&copy; 2023{' '}
+						<a
+							href="https://github.com/mireu-san/project-library"
+							style={{ color: 'white', cursor: 'pointer' }}
+						>
+							mireu-san
+						</a>
+					</p>
+					<p>
+						DISCLAIMER <br />I do not own any of the 3D objects and images here.
+					</p>
 				</motion.div>
 			</header>
 		</div>

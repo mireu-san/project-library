@@ -1,8 +1,19 @@
+.bookmark-list-wrapper {
+	background-color: #adb5bd;
+	height: 100vh;
+}
+
+h2 {
+	padding-top: 5rem;
+	padding-bottom: 2rem;
+	font-size: 4rem;
+}
+
 .root-style-bookmark {
 	text-align: center;
 	width: 800px;
 	margin: auto;
-	margin-top: 20px;
+	/* margin-top: 20px; */
 	margin-bottom: 40px;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 import BookshelfCanvas from '../../components/canvas/Book';
-import Footer from '../../components/Footer/Footer';
+// import Footer from '../../components/Footer/Footer';
 
 const About = () => {
 	return (
@@ -34,7 +34,7 @@ const About = () => {
 					</div>
 				</div>
 			</div>
-			<Footer />
+			{/* <Footer /> */}
 		</section>
 	);
 };

@@ -26,7 +26,11 @@ const Book = (book) => {
 			const updatedIsChecked = !prevIsChecked;
 			if (updatedIsChecked) {
 				setModalVisible(true);
-				setTimeout(() => setModalVisible(false), 2000);
+
+				// To wait for the exit animation to complete before hiding the modal
+				new Promise((resolve) => setTimeout(resolve, 500)).then(() => {
+					setModalVisible(false);
+				});
 			}
 			return updatedIsChecked;
 		});
