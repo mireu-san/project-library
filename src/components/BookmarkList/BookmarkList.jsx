@@ -55,7 +55,7 @@ const BookmarkList = () => {
 		return selectedBooks
 			.map((bookId) => {
 				const book = bookmarks.find((b) => b.id === bookId);
-				return `Title: ${book.title}\nAuthor: ${book.author}\nPublished: ${book.first_publish_year}`;
+				return `Title: ${book.title}\nAuthor: ${book.author}\nPublished: ${book.first_publish_year}\nHave a good day!😎 By mireu-san`;
 			})
 			.join('\n\n');
 	};
