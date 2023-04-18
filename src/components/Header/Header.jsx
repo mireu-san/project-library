@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SearchForm from '../SearchForm/SearchForm';
 import StarsCanvas from '../canvas/Stars';
-import EarthCanvas from '../canvas/Earth';
+import PaladinCanvas from '../canvas/Paladin';
 import './Header.css';
 
 const Header = () => {
@@ -65,7 +65,7 @@ const Header = () => {
 						<StarsCanvas />
 					</div>
 					<div style={{ position: 'relative', zIndex: 1, marginTop: '100px' }}>
-						<EarthCanvas />
+						<PaladinCanvas />
 					</div>
 					<p style={{ position: 'relative', zIndex: 2 }}>
 						&copy; 2023{' '}

@@ -5,19 +5,25 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 import CanvasLoader from '../Loader';
 
-const Earth = () => {
-	const earth = useGLTF('./planet/scene.gltf');
+const Paladin = () => {
+	// useGLTF can handle GLB as well
+	const paladin = useGLTF('./planet/paladin.glb');
 
 	return (
-		<primitive object={earth.scene} scale={2.5} position-y={0} rotation-y={0} />
+		<primitive
+			object={paladin.scene}
+			scale={2.5}
+			position-y={0}
+			rotation-y={0}
+		/>
 	);
 };
 
-const EarthCanvas = () => {
+const PaladinCanvas = () => {
 	return (
 		<Canvas
 			shadows
-			frameloop="demand"
+			frameloop="always"
 			dpr={[1, 2]}
 			gl={{ preserveDrawingBuffer: true }}
 			camera={{
@@ -27,18 +33,22 @@ const EarthCanvas = () => {
 				position: [-4, 3, 6],
 			}}
 		>
+			<ambientLight intensity={0.5} />
+			<directionalLight position={[0, 10, 5]} intensity={1} />
 			<Suspense fallback={<CanvasLoader />}>
 				<OrbitControls
 					autoRotate
-					enableZoom={false}
+					enableZoom={true}
 					maxPolarAngle={Math.PI / 2}
 					minPolarAngle={Math.PI / 2}
+					minDistance={1}
+					maxDistance={1.5}
 				/>
-				<Earth />
+				<Paladin />
 				<Preload all />
 			</Suspense>
 		</Canvas>
 	);
 };
 
-export default EarthCanvas;
+export default PaladinCanvas;
