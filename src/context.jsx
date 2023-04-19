@@ -47,15 +47,11 @@ const AppProvider = ({ children }) => {
 				if (newBooks.length > 1) {
 					setResultTitle('Your Search Result');
 				} else {
-					setResultTitle(
-						'No search results found. Please try again using a different approach.'
-					);
+					setResultTitle('No search results found. Please try again.');
 				}
 			} else {
 				setBooks([]);
-				setResultTitle(
-					'No search results found. Please try again using a different approach.'
-				);
+				setResultTitle('No search results found. Please try again.');
 			}
 			setLoading(false);
 		} catch (error) {
