@@ -3,4 +3,4 @@ import BallCanvas from './Ball';
 import ComputersCanvas from './Computers';
 import StarsCanvas from './Stars';
 
-export { Paladin, BallCanvas, ComputersCanvas, StarsCanvas };
+export { PaladinCanvas, BallCanvas, ComputersCanvas, StarsCanvas };

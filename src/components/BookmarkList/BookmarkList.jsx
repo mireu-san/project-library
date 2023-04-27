@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './BookmarkList.css';
 import noteIcon from '../../images/note.svg';
 import RemoveModal from '../BookmarkModal/RemoveModal';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 
 const BookmarkList = () => {
 	const [bookmarks, setBookmarks] = useState([]);
