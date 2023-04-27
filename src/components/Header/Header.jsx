@@ -2,8 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SearchForm from '../SearchForm/SearchForm';
 import StarsCanvas from '../canvas/Stars';
-import PaladinCanvas from '../canvas/Paladin';
-import BookshelfCanvas from '../../components/canvas/Book';
+// import PaladinCanvas from '../canvas/Paladin';
 import './Header.css';
 
 const Header = () => {
@@ -56,8 +55,8 @@ const Header = () => {
 						className="search-form"
 						style={{
 							position: 'absolute',
-							zIndex: 2,
-							marginTop: window.innerWidth <= 768 ? '10px' : '-30px',
+							zIndex: 1,
+							marginTop: window.innerWidth <= 768 ? '10px' : '100px',
 							marginBottom: '20px',
 						}}
 					>
@@ -78,7 +77,6 @@ const Header = () => {
 						}}
 					>
 						{/* <PaladinCanvas /> */}
-						<BookshelfCanvas />
 					</div>
 					<p style={{ position: 'relative', zIndex: 2 }}>
 						&copy; 2023{' '}
