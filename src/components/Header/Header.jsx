@@ -62,7 +62,7 @@ const Header = () => {
 						<SearchForm />
 					</div>
 					<div style={{ position: 'absolute', zIndex: 0 }}>
-						<StarsCanvas />
+						{/* <StarsCanvas /> */}
 					</div>
 					<div style={{ position: 'relative', zIndex: 1, marginTop: '100px' }}>
 						<PaladinCanvas />
