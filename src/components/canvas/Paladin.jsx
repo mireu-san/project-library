@@ -18,7 +18,7 @@ const PaladinCanvas = () => {
 	return (
 		<Canvas
 			shadows
-			frameloop="always"
+			// frameloop="always"
 			dpr={[1, 2]}
 			gl={{ preserveDrawingBuffer: true }}
 			camera={{
