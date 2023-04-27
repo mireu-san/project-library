@@ -52,19 +52,30 @@ const Header = () => {
 						Powered by openlibrary.org
 					</motion.p>
 					<div
+						className="search-form"
 						style={{
 							position: 'absolute',
 							zIndex: 2,
-							marginTop: '30px',
+							marginTop: window.innerWidth <= 768 ? '10px' : '-30px',
 							marginBottom: '20px',
 						}}
 					>
 						<SearchForm />
 					</div>
-					<div style={{ position: 'absolute', zIndex: 0 }}>
+					<div
+						className="star-canvas"
+						style={{ position: 'absolute', zIndex: 0 }}
+					>
 						<StarsCanvas />
 					</div>
-					<div style={{ position: 'relative', zIndex: 1, marginTop: '100px' }}>
+					<div
+						className="paladin-book"
+						style={{
+							position: 'relative',
+							zIndex: 1,
+							marginTop: window.innerWidth <= 768 ? '60px' : '160px',
+						}}
+					>
 						<PaladinCanvas />
 					</div>
 					<p style={{ position: 'relative', zIndex: 2 }}>

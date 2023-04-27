@@ -24,6 +24,17 @@
 .header-text a {
 	color: white;
 }
+/* 
+.star-canvas {
+	position: 'absolute';
+	z-index: 0;
+}
+
+.paladin-book {
+	position: 'relative';
+	z-index: 1;
+	margin-top: '100px';
+} */
 
 @media screen and (max-width: 480px) {
 	.header-title {

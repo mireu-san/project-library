@@ -10,12 +10,7 @@ const Paladin = () => {
 	const paladin = useGLTF('./paladin/scene.gltf');
 
 	return (
-		<primitive
-			object={paladin.scene}
-			scale={2.5}
-			position-y={0}
-			rotation-y={0}
-		/>
+		<primitive object={paladin.scene} scale={4} position-y={0} rotation-y={0} />
 	);
 };
 
