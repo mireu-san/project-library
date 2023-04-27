@@ -7,7 +7,7 @@ import CanvasLoader from '../Loader';
 
 const Paladin = () => {
 	// useGLTF can handle GLB as well
-	const paladin = useGLTF('/paladin/paladin.glb');
+	const paladin = useGLTF('./paladin/scene.gltf');
 
 	return (
 		<primitive
