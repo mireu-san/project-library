@@ -6,7 +6,6 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from '../Loader';
 
 const Paladin = () => {
-	// useGLTF can handle GLB as well
 	const paladin = useGLTF('./paladin/scene.gltf');
 
 	return (
@@ -28,8 +27,6 @@ const PaladinCanvas = () => {
 				position: [-4, 3, 6],
 			}}
 		>
-			<ambientLight intensity={0.5} />
-			<directionalLight position={[0, 10, 5]} intensity={1} />
 			<Suspense fallback={<CanvasLoader />}>
 				<OrbitControls
 					autoRotate
@@ -39,6 +36,9 @@ const PaladinCanvas = () => {
 					minDistance={1}
 					maxDistance={1.5}
 				/>
+				<ambientLight intensity={0.5} />
+				<directionalLight position={[0, 10, 5]} intensity={1} />
+
 				<Paladin />
 				<Preload all />
 			</Suspense>
