@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import SearchForm from '../SearchForm/SearchForm';
 import StarsCanvas from '../canvas/Stars';
 import PaladinCanvas from '../canvas/Paladin';
+import BookshelfCanvas from '../../components/canvas/Book';
 import './Header.css';
 
 const Header = () => {
@@ -76,7 +77,8 @@ const Header = () => {
 							marginTop: window.innerWidth <= 768 ? '60px' : '160px',
 						}}
 					>
-						<PaladinCanvas />
+						{/* <PaladinCanvas /> */}
+						<BookshelfCanvas />
 					</div>
 					<p style={{ position: 'relative', zIndex: 2 }}>
 						&copy; 2023{' '}
