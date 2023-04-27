@@ -65,7 +65,7 @@ const Header = () => {
 						{/* <StarsCanvas /> */}
 					</div>
 					<div style={{ position: 'relative', zIndex: 1, marginTop: '100px' }}>
-						<PaladinCanvas />
+						{/* <PaladinCanvas /> */}
 					</div>
 					<p style={{ position: 'relative', zIndex: 2 }}>
 						&copy; 2023{' '}
