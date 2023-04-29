@@ -1,4 +1,4 @@
-import { React, useState, useRef, Suspense } from 'react';
+import { React, useState, useRef, Suspense, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial, Preload } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
@@ -31,15 +31,31 @@ const Stars = (props) => {
 };
 
 const StarsCanvas = () => {
+	const [canvasWidth, setCanvasWidth] = useState(window.innerWidth);
+	const [canvasHeight, setCanvasHeight] = useState(window.innerHeight);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setCanvasWidth(window.innerWidth);
+			setCanvasHeight(window.innerHeight);
+		};
+
+		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
+
 	return (
 		<div
 			className="w-full h-auto absolute inset-0 z-[-1]"
 			style={{
-				width: '1366px',
-				height: '768px',
+				width: '100%',
+				height: '100%',
 			}}
 		>
-			<Canvas camera={{ position: [0, 0, 1] }}>
+			<Canvas camera={{ position: [0, 0, 1] }} style={{ width: canvasWidth, height: canvasHeight }}>
 				<Suspense fallback={null}>
 					<Stars />
 				</Suspense>
