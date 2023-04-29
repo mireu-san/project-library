@@ -32,7 +32,7 @@ const Header = () => {
 
 	return (
 		<div className="holder">
-			<header className="header">
+			<header className="header" style={{ position: 'relative' }}>
 				<motion.div
 					className="header-content flex flex-c text-center text-white"
 					style={{ overflow: 'hidden' }}
@@ -64,7 +64,14 @@ const Header = () => {
 					</div>
 					<div
 						className="star-canvas"
-						style={{ position: 'absolute', zIndex: 0 }}
+						style={{
+							position: 'absolute',
+							zIndex: 0,
+							top: 0,
+							left: 0,
+							right: 0,
+							bottom: 0,
+						}}
 					>
 						<StarsCanvas />
 					</div>

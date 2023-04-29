@@ -55,7 +55,10 @@ const StarsCanvas = () => {
 				height: '100%',
 			}}
 		>
-			<Canvas camera={{ position: [0, 0, 1] }} style={{ width: canvasWidth, height: canvasHeight }}>
+			<Canvas
+				camera={{ position: [0, 0, 1] }}
+				style={{ width: canvasWidth, height: canvasHeight }}
+			>
 				<Suspense fallback={null}>
 					<Stars />
 				</Suspense>
