@@ -1,9 +1,8 @@
 .header-content {
-	min-height: 75vh;
+	min-height: 100vh;
 	background: linear-gradient(rgba(141, 39, 174, 0.3), rgba(141, 39, 174, 0.5)),
 		url('../../images/library3.gif') center/cover no-repeat;
 	flex-direction: column;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -24,17 +23,6 @@
 .header-text a {
 	color: white;
 }
-/* 
-.star-canvas {
-	position: 'absolute';
-	z-index: 0;
-}
-
-.paladin-book {
-	position: 'relative';
-	z-index: 1;
-	margin-top: '100px';
-} */
 
 @media screen and (max-width: 480px) {
 	.header-title {

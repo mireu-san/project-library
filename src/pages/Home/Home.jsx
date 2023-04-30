@@ -11,7 +11,7 @@ const Home = () => {
 			<main className="body">
 				<Outlet />
 			</main>
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	);
 };
